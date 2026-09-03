@@ -2,5 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "installCommand": "npm install",
-  "framework": "create-react-app"
+  "framework": "create-react-app",
+  "env": {
+    "NODE_OPTIONS": "--openssl-legacy-provider",
+    "GENERATE_SOURCEMAP": "false"
+  }
 }
