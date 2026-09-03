@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import "./App.css";
 
 const LAST_LOGIN = `Last login: ${new Date().toDateString()} on ttys001`;
-const WELCOME = `Welcome to Sudharshan's portfolio terminal.\nType \"tutorial\" for a beginner guide or \"help\" to see all commands.`;
+const WELCOME = `Welcome to Sudharshan's portfolio terminal.\nType "tutorial" for a beginner guide or "help" to see all commands.`;
 const PROMPT = "sudharshan@cyber:~$";
 
 const SECTIONS = {
@@ -71,7 +71,7 @@ function Terminal() {
     { type: "system", text: WELCOME },
   ]);
   const [input, setInput] = useState("");
-  const [locked, setLocked] = useState(false);
+  const [locked] = useState(false);
   const scrollRef = useRef();
 
   useEffect(() => {
@@ -119,7 +119,7 @@ function Terminal() {
     }
     setLines(l => [...l,
       {type: "output", text: `Command not found: ${cmd}`},
-      {type: "output", text: `Type \"help\" to see a list of valid commands.`}
+      {type: "output", text: `Type "help" to see a list of valid commands.`}
     ]);
     setInput("");
   };
